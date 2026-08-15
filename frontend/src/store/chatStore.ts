@@ -3,7 +3,7 @@ export type ChatStore = {
   setMessages: (messages: ChatStore['messages']) => void;
 };
 
-export const chatStore = {
+export const chatStore: ChatStore = {
   messages: [],
   setMessages(messages: ChatStore['messages']) {
     this.messages = messages;

@@ -3,7 +3,7 @@ export type DocumentStore = {
   addFile: (file: string) => void;
 };
 
-export const documentStore = {
+export const documentStore: DocumentStore = {
   files: [],
   addFile(file: string) {
     this.files.push(file);
