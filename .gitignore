@@ -53,4 +53,4 @@ wheels/
 .installed.cfg
 *.egg
 
-.gitignore
+.gitignore 
