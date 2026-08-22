@@ -8,6 +8,12 @@ app = FastAPI(title=settings.app_name)
 
 @app.get("/health")
 def health_check(db: Session = Depends(get_db)):
+    if db is None:
+        return {
+            "status": "unhealthy",
+            "database": "not_configured",
+            "environment": settings.environment
+        }
     try:
         # Execute basic query to verify connection to Supabase PostgreSQL database
         db.execute(text("SELECT 1"))
