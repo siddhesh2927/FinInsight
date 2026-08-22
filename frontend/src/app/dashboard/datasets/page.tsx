@@ -1,11 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { Database, Upload, Eye, TableProperties, ChevronDown, ChevronUp } from 'lucide-react';
-import { StatusBadge } from '../../../components/ui/StatusBadge';
-import { mockDatasets as initialDatasets } from '../../../lib/mockData';
-import { DatasetItem } from '../../../types/chat';
-import { ApiService } from '../../../services/api.service';
+import { Database, Upload, TableProperties, ChevronDown, ChevronUp } from 'lucide-react';
+import { StatusBadge } from '@/components/ui/StatusBadge';
+import { useDatasets } from '@/hooks/useDatasets';
 
 const previewData = [
   { company: 'FinCorp Inc.', year: 2025, quarter: 'Q1', revenue: 21.4, opex: 16.6, profit: 4.8, margin: '22.4%' },
@@ -15,39 +12,13 @@ const previewData = [
 ];
 
 export default function DatasetsPage() {
-  const [datasets, setDatasets] = useState<DatasetItem[]>(initialDatasets);
-  const [previewId, setPreviewId] = useState<number | null>(null);
-  const [uploading, setUploading] = useState(false);
-
-  const handlePreviewToggle = (id: number) => {
-    setPreviewId(previewId === id ? null : id);
-  };
-
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (files && files.length > 0) {
-      setUploading(true);
-      try {
-        const newDs = await ApiService.uploadCSV(files[0]);
-        setDatasets((prev) => [
-          {
-            id: newDs.id || Date.now(),
-            name: newDs.name || files[0].name,
-            rows: newDs.rows || 100,
-            cols: newDs.cols || 5,
-            company: newDs.company || 'FinCorp Inc.',
-            imported: newDs.imported || 'Just now',
-            status: 'Connected',
-          },
-          ...prev,
-        ]);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setUploading(false);
-      }
-    }
-  };
+  const {
+    datasets,
+    previewId,
+    uploading,
+    handlePreviewToggle,
+    handleFileChange,
+  } = useDatasets();
 
   const activeDataset = datasets.find((d) => d.id === previewId);
 

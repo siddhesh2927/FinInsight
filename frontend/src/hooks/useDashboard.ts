@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { Screen } from '../types/chat';
+import { Screen } from '@/types/chat';
 
 export function useDashboard() {
   const [screen, setScreenState] = useState<Screen>('dashboard');

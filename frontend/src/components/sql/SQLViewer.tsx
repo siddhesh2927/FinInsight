@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Copy, Play, Check, Download } from 'lucide-react';
-import { revenueData } from '../../lib/mockData';
+import { revenueData } from '@/lib/mockData';
 
 interface SQLViewerProps {
   query?: string;

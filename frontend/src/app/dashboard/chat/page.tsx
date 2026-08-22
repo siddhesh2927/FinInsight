@@ -3,14 +3,14 @@
 import { Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Send, History, Sparkles, Download, FileText, Database } from 'lucide-react';
-import { useChatState } from '../../../hooks/useChatState';
-import { QueryBadge } from '../../../components/chat/QueryBadge';
-import { ThinkingIndicator } from '../../../components/chat/ThinkingIndicator';
-import { MetricCard } from '../../../components/analytics/MetricCard';
-import { RevenueProfitChart } from '../../../components/analytics/RevenueProfitChart';
-import { SQLViewer } from '../../../components/sql/SQLViewer';
-import { SourcesPanel } from '../../../components/sources/SourcesPanel';
-import { mockHistory } from '../../../lib/mockData';
+import { useChat } from '@/hooks/useChat';
+import { QueryBadge } from '@/components/chat/QueryBadge';
+import { ThinkingIndicator } from '@/components/chat/ThinkingIndicator';
+import { MetricCard } from '@/components/analytics/MetricCard';
+import { RevenueProfitChart } from '@/components/analytics/RevenueProfitChart';
+import { SQLViewer } from '@/components/sql/SQLViewer';
+import { SourcesPanel } from '@/components/sources/SourcesPanel';
+import { mockHistory } from '@/lib/mockData';
 
 function ChatWorkspace() {
   const searchParams = useSearchParams();
@@ -29,7 +29,7 @@ function ChatWorkspace() {
     toggleSQL,
     toggleSources,
     handleSend,
-  } = useChatState(queryParam);
+  } = useChat(queryParam);
 
   const handleHistoryReopen = (q: string) => {
     router.push(`/dashboard/chat?q=${encodeURIComponent(q)}`);

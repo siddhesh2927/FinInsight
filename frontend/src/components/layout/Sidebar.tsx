@@ -13,7 +13,7 @@ import {
   ChevronRight, 
   Upload
 } from 'lucide-react';
-import { Screen } from '../../types/chat';
+import { Screen } from '@/types/chat';
 
 interface SidebarProps {
   collapsed: boolean;

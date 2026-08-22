@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { Sidebar } from '../../components/layout/Sidebar';
-import { Topbar } from '../../components/layout/Topbar';
+import { Sidebar } from '@/components/layout/Sidebar';
+import { Topbar } from '@/components/layout/Topbar';
 
 const screenTitles: Record<string, string> = {
   '/dashboard': 'Dashboard',

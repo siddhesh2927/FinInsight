@@ -1,6 +1,6 @@
 'use client';
 
-import { DocStatus, DatasetStatus } from '../../types/chat';
+import { DocStatus, DatasetStatus } from '@/types/chat';
 
 interface StatusBadgeProps {
   status: DocStatus | DatasetStatus;

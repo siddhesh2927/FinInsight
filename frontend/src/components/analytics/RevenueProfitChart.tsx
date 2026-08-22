@@ -13,7 +13,7 @@ import {
   Bar
 } from 'recharts';
 import { Download } from 'lucide-react';
-import { revenueData } from '../../lib/mockData';
+import { revenueData } from '@/lib/mockData';
 
 export function RevenueProfitChart() {
   const [mounted, setMounted] = useState(false);

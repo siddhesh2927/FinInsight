@@ -10,8 +10,8 @@ import {
   MessageSquare, 
   Clock 
 } from 'lucide-react';
-import { QueryBadge } from '../../components/chat/QueryBadge';
-import { mockHistory } from '../../lib/mockData';
+import { QueryBadge } from '@/components/chat/QueryBadge';
+import { mockHistory } from '@/lib/mockData';
 
 export default function DashboardPage() {
   const [input, setInput] = useState('');

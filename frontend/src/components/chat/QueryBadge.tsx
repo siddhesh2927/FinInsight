@@ -1,7 +1,7 @@
 'use client';
 
 import { Database, FileSearch, Sparkles } from 'lucide-react';
-import { QueryType } from '../../types/chat';
+import { QueryType } from '@/types/chat';
 
 interface QueryBadgeProps {
   type: QueryType;

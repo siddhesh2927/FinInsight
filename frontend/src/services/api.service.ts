@@ -1,5 +1,5 @@
-import { Message, DocumentItem, DatasetItem, QueryHistoryItem } from '../types/chat';
-import { mockDocuments, mockDatasets, mockHistory, revenueData } from '../lib/mockData';
+import { Message, DocumentItem, DatasetItem, QueryHistoryItem } from '@/types/chat';
+import { mockDocuments, mockDatasets, mockHistory, revenueData } from '@/lib/mockData';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 

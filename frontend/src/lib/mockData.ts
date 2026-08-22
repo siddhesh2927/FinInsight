@@ -1,4 +1,4 @@
-import { DocumentItem, DatasetItem, QueryHistoryItem, Message } from '../types/chat';
+import { DocumentItem, DatasetItem, QueryHistoryItem, Message } from '@/types/chat';
 
 export const revenueData = [
   { quarter: 'Q1', revenue: 21.4, profit: 4.8, expenses: 16.6, margin: 22.4 },

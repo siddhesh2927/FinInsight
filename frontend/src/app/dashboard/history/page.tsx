@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { History, ArrowRight, Calendar, Search } from 'lucide-react';
-import { QueryBadge } from '../../../components/chat/QueryBadge';
-import { mockHistory } from '../../../lib/mockData';
-import { QueryType } from '../../../types/chat';
+import { QueryBadge } from '@/components/chat/QueryBadge';
+import { mockHistory } from '@/lib/mockData';
+import { QueryType } from '@/types/chat';
 
 export default function HistoryPage() {
   const [filterType, setFilterType] = useState<string>('All');
